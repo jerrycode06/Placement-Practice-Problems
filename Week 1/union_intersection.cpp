@@ -1,28 +1,39 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+void printIntersection(int arr1[],int arr2[],int N, int M);
 
 void printUnion(int arr1[],int arr2[],int N, int M)
 {
-	int arr3[M+N],j=0,k=0;
-	for(int i=0;i<M+N;i++){
-		if(arr1[j] == arr2[k]){
-			arr3[i] = arr1[j];
+	int i = 0,j=0;
+	while(i<N && j<M)
+	{
+		if(arr1[i] == arr2[j]){
+			cout<<arr1[i++]<<" ";
 			j++;
-			k++;
 		}
-		else if(arr1[j]<arr2[k])
+		else if(arr1[i] < arr2[j])
+			cout<<arr1[i++]<<" ";
+		else
+			cout<<arr2[j++]<<" ";
+	}
+
+	while(i<N)
+		cout<<arr1[i++]<<" ";
+	while(j<M)
+		cout<<arr2[j++]<<" ";
+}
+
+void printIntersection(int arr1[],int arr2[],int N, int M)
+{
+	for(int i=0;i<N;i++)
+	{
+		for(int j=0;j<M;j++)
 		{
-			arr3[i] = arr1[j];
-			j++;
-		}
-		else{
-			arr3[i] = arr2[k];
-			k++;
+			if(arr1[i] == arr2[j])
+				cout<<arr1[i]<<" ";
 		}
 	}
-	for(int i=0;i<M+N;i++)
-			cout<<arr3[i];
 }
 
 int main()
@@ -42,6 +53,10 @@ int main()
 		cout<<"Enter elements in 2nd Array"<<endl;
 		for(int j=0;j<M;j++)
 			cin>>arr2[j];
-		printUnion(arr1[],arr2[],N,M);
+		cout<<"Union is:-"<<endl;
+		printUnion(arr1,arr2,N,M);
+		cout<<endl;
+		cout<<"Intersection is:-"<<endl;
+		printIntersection(arr1,arr2,N,M);
 	}
 }
