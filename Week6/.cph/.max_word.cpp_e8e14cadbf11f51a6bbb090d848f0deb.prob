@@ -1,0 +1,1 @@
+{"name":"Local: max_word","url":"/mnt/c/Local-Disk-D/Placement Preparation/Week6/max_word.cpp","tests":[{"id":1620704819164,"input":"20\nI am a peaceful soul","output":"8\npeaceful"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/mnt/c/Local-Disk-D/Placement Preparation/Week6/max_word.cpp","group":"local","local":true}
