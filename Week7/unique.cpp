@@ -12,5 +12,7 @@ int unique(int arr[], int n)
 
 int main()
 {
-
+    int arr[] = {1,2,3,4,1,2,3};
+    cout<<unique(arr,7)<<endl;
+    return 0;
 }
